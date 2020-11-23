@@ -157,7 +157,7 @@ trait DetectsChanges
 
             if ($model->isDateAttribute($attribute)) {
                 $changes[$attribute] = $model->serializeDate(
-                    $model->asDateTime($changes[$attribute])
+                    $model->asDateTime(Carbon::now())
                 );
             }
 
@@ -165,7 +165,7 @@ trait DetectsChanges
                 $cast = $model->getCasts()[$attribute];
 
                 if ($model->isCustomDateTimeCast($cast)) {
-                    $changes[$attribute] = $model->asDateTime($changes[$attribute])->format(explode(':', $cast, 2)[1]);
+                    $changes[$attribute] = $model->asDateTime(Carbon::now());
                 }
             }
         }
