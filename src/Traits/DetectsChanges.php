@@ -5,6 +5,7 @@ namespace Spatie\Activitylog\Traits;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Str;
+use Carbon\Carbon;
 
 trait DetectsChanges
 {
